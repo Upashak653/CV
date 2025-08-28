@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upashak Gayen - AI/ML Engineer Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Upashak Gayen - AI/ML Engineer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -14,672 +13,762 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.2);
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .nav {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            color: white;
-            font-weight: bold;
+            padding: 1rem 0;
         }
 
-        .header h1 {
-            font-size: 2.5rem;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 10px;
-        }
-
-        .header h2 {
-            font-size: 1.2rem;
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #4a5568;
+            color: #7c3aed;
             text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .contact-item:hover {
-            color: #667eea;
+        .nav-links a:hover {
+            color: #7c3aed;
         }
 
-        .download-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 30px;
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-badge {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            color: #a855f7;
+            padding: 0.5rem 1rem;
             border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(124, 58, 237, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 0.5rem;
         }
 
-        .download-btn:hover {
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(124, 58, 237, 0.1);
+            color: #7c3aed;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(124, 58, 237, 0.2);
         }
 
         /* Sections */
         .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 80px 0;
         }
 
-        .section h3 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 20px;
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #f1f5f9;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .experience-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+        }
+
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            margin-bottom: 1rem;
         }
 
-        .section-icon {
-            color: #667eea;
-            font-size: 1.5rem;
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 1rem;
         }
 
-        /* About */
-        .about-text {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.8;
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.25rem;
         }
 
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .skill-category h4 {
-            color: #2d3748;
+        .card-subtitle {
+            color: #7c3aed;
             font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
         }
 
-        .skill-list {
-            list-style: none;
+        .card-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 0.5rem;
         }
 
-        .skill-item {
-            background: #667eea;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 500;
         }
 
-        /* Projects */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            gap: 2rem;
         }
 
         .project-card {
-            background: #f7fafc;
-            border-radius: 15px;
-            padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.1);
         }
 
-        .project-card h4 {
-            color: #2d3748;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .project-header {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.2));
+            padding: 1.5rem;
+        }
+
+        .project-title {
             font-size: 1.2rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
         }
 
-        .project-card p {
-            color: #4a5568;
-            margin-bottom: 15px;
+        .project-description {
+            color: #cbd5e1;
+            font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        .project-content {
+            padding: 1.5rem;
         }
 
         .project-links {
             display: flex;
-            gap: 10px;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .project-link {
-            background: #667eea;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #7c3aed;
             text-decoration: none;
+            font-weight: 600;
             font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            background: #5a67d8;
+            color: #a855f7;
         }
 
-        /* Experience */
-        .experience-item {
-            border-left: 3px solid #667eea;
-            padding-left: 25px;
-            margin-bottom: 25px;
-            position: relative;
+        /* Contact Section */
+        .contact {
+            background: rgba(30, 41, 59, 0.5);
+            text-align: center;
         }
 
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 13px;
-            height: 13px;
-            background: #667eea;
-            border-radius: 50%;
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .experience-item h4 {
-            color: #2d3748;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .experience-item h5 {
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .experience-item .date {
-            color: #718096;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .experience-item p {
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        /* Education */
-        .education-item {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .education-item h4 {
-            color: #2d3748;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .education-item p {
-            color: #4a5568;
-            margin-bottom: 5px;
-        }
-
-        .education-item .date {
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            display: grid;
-            gap: 20px;
-        }
-
-        .form-group {
+        .contact-link {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-weight: 500;
-            color: #2d3748;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 12px;
-            border: 2px solid #e2e8f0;
+            align-items: center;
+            text-decoration: none;
+            color: #cbd5e1;
+            transition: all 0.3s ease;
+            padding: 1rem;
             border-radius: 10px;
-            font-family: inherit;
-            transition: border-color 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
+        .contact-link:hover {
+            color: #7c3aed;
+            transform: translateY(-3px);
         }
 
-        .submit-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .section {
-                padding: 30px 20px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
+            .nav-links {
+                display: none;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
             }
             
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
             }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="profile-img">UG</div>
-            <h1>Upashak Gayen</h1>
-            <h2>AI/ML Engineer & Full-Stack Developer</h2>
-            
-            <div class="contact-info">
-                <a href="mailto:upashak1817@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    upashak1817@gmail.com
-                </a>
-                <a href="https://github.com/Upashak653" class="contact-item" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-                <a href="tel:+9193307146372" class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    +91 93307146372
-                </a>
-                <span class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Kolkata, West Bengal
-                </span>
-            </div>
-            
-            <a href="CV(3) (1).pdf" class="download-btn" download>
-                <i class="fas fa-download"></i>
-                Download CV
-            </a>
-        </header>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#home" class="logo">Upashak Gayen</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- About -->
-        <section class="section">
-            <h3><i class="fas fa-user section-icon"></i>About Me</h3>
-            <p class="about-text">
-                I am a passionate AI/ML Engineer with expertise in solving real-world problems using Agentic AI, MCP, machine learning, deep learning, and NLP. 
-                I have extensive experience with GenAI, RAG pipelines, and recommendation systems. Currently pursuing my Bachelor's in Computer Science and Engineering 
-                at Government College of Engineering and Leather Technology, I am seeking a full-time role to build impactful, intelligent systems that make a difference.
-            </p>
-        </section>
-
-        <!-- Skills -->
-        <section class="section">
-            <h3><i class="fas fa-code section-icon"></i>Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">Python (Intermediate)</li>
-                        <li class="skill-item">JavaScript (Intermediate)</li>
-                        <li class="skill-item">C(Intermediate)</li>
-                        <li class="skill-item">HTML</li>
-                        <li class="skill-item">CSS</li>
-                        
-                        <li class="skill-item">SQL (MySQL)</li>
-                        <li class="skill-item">NoSQL (MongoDB)</li>
-                    </ul>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="floating">Upashak Gayen</h1>
+                <p class="subtitle">AI/ML Engineer & Agentic AI Specialist</p>
+                <p class="description">
+                    Passionate about building intelligent systems that solve real-world problems. 
+                    Specialized in Agentic AI, AutoGen, LangGraph, and multi-agent systems with 
+                    extensive experience in RAG pipelines, vector databases, and LLM integration.
+                </p>
                 
-                <div class="skill-category">
-                    <h4>Machine Learning & Data Science</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">TensorFlow</li>
-                        <li class="skill-item">Keras</li>
-                        <li class="skill-item">Scikit-learn</li>
-                        <li class="skill-item">Pandas</li>
-                        <li class="skill-item">NumPy</li>
-                        <li class="skill-item">Matplotlib</li>
-                        <li class="skill-item">Seaborn</li>
-                        <li class="skill-item">NLTK</li>
-                        <li class="skill-item">WordCloud</li>
-                    </ul>
+                <div class="tech-stack">
+                    <span class="tech-badge">🤖 AutoGen</span>
+                    <span class="tech-badge">🕸️ LangGraph</span>
+                    <span class="tech-badge">🧠 OpenAI</span>
+                    <span class="tech-badge">🔷 Gemini</span>
+                    <span class="tech-badge">🤗 Hugging Face</span>
+                    <span class="tech-badge">🦜 LangChain</span>
+                    <span class="tech-badge">⚡ RAG Systems</span>
+                    <span class="tech-badge">🎯 Vector DB</span>
                 </div>
 
-                <div class="skill-category">
-                    <h4>GenAI and Agentic AI</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">LLMs</li>
-                        <li class="skill-item">Fine-tunning an LLM</li>
-                        <li class="skill-item">RAG</li>
-                        <li class="skill-item">Agentic AI( CrewAI, Autogen)</li>
-                        <li class="skill-item">LangChain</li>
-                        <li class="skill-item">LangGraph</li>
-                        <li class="skill-item">FastAPI</li>
-                        <li class="skill-item">GenAI and Vector DB(Pinecone , weaviate)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Frameworks & Libraries</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">React.js</li>
-                        <li class="skill-item">Next.js</li>
-                        <li class="skill-item">Express.js</li>
-                        <li class="skill-item">Node.js</li>
-                        <li class="skill-item">Django</li>
-                        <li class="skill-item">Bootstrap</li>
-                        <li class="skill-item">Tailwind CSS</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Databases & Tools</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">Git</li>
-                        <li class="skill-item">GitHub</li>
-                        <li class="skill-item">VS Code</li>
-                        <li class="skill-item">Cursor IDE</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Soft Skills</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">Teamwork</li>
-                        <li class="skill-item">Leadership</li>
-                        <li class="skill-item">Planning</li>
-                        <li class="skill-item">Communication</li>
-                        <li class="skill-item">Problem Solving</li>
-                    </ul>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects -->
-        <section class="section">
-            <h3><i class="fas fa-project-diagram section-icon"></i>Projects</h3>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Experience & Expertise</h2>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">Agentic AI Systems</h3>
+                            <p class="card-subtitle">AutoGen • LangGraph • Multi-Agent Workflows</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Developed intelligent agent systems using browser automation and LLMs to browse the web, 
+                        extract data, and generate contextual summaries for real-time research. Built stateful 
+                        workflows with complex decision trees and agent orchestration.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AutoGen</span>
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Web Automation</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">Vector Database & RAG Systems</h3>
+                            <p class="card-subtitle">Pinecone • ChromaDB • Haystack • Similarity Search</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Built comprehensive vector database systems integrated with GenAI for similarity search 
+                        using Pinecone, enabling efficient information retrieval. Implemented RAG systems using 
+                        Haystack framework for enhanced question-answering capabilities.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vector DB</span>
+                        <span class="tech-tag">RAG Pipeline</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">Haystack</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">AI-Powered Recommendation Systems</h3>
+                            <p class="card-subtitle">CrewAI • Multi-Agent Analysis • ML Algorithms</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Developed an AI-based stock recommendation system using CrewAI with four specialized 
+                        agents for market analysis and company insights. Created intelligent music recommendation 
+                        systems using machine learning algorithms for personalized suggestions.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">CrewAI</span>
+                        <span class="tech-tag">Multi-Agent</span>
+                        <span class="tech-tag">ML Algorithms</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">Full-Stack AI Applications</h3>
+                            <p class="card-subtitle">MERN Stack • Next.js • GenAI Integration</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Built full-stack GenAI-powered SaaS platforms for content and code generation using 
+                        Gemini API with Next.js, Express.js, and Tailwind CSS. Developed real-time applications 
+                        with Socket.IO and modern web technologies.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">MERN Stack</span>
+                        <span class="tech-tag">GenAI APIs</span>
+                        <span class="tech-tag">Socket.IO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
             <div class="projects-grid">
                 <div class="project-card">
-                    <h4>Autonomous Web Agent for Real-Time Research</h4>
-                    <p>Developed an intelligent agent using browser automation and LLM to browse the web, extract data, and generate contextual summaries for real-time research.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/Autonomous_Web_Agent_and_Real_Time_Research" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">🤖 Autonomous Web Agent & Real-Time Research</h3>
+                        <p class="project-description">
+                            Multi-agent system for autonomous web research and data collection with intelligent coordination.
+                        </p>
+                    </div>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">AutoGen</span>
+                            <span class="tech-tag">LangGraph</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">Web Scraping</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Upashak653/Autonomous_Web_Agent_and_Real_Time_Research" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h4>Vector DB and GenAI Integration</h4>
-                    <p>Built a comprehensive vector database system integrated with GenAI for similarity search using Pinecone, enabling efficient information retrieval.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/vectorDB_GenAI" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">🧠 AI Content Generator</h3>
+                        <p class="project-description">
+                            Next-gen content generation platform using multiple LLM providers with intelligent routing.
+                        </p>
+                    </div>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">Gemini</span>
+                            <span class="tech-tag">DeepSeek</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Upashak653/ai-content-generator" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h4>Agentic AI Stock Recommendation System</h4>
-                    <p>Developed an AI-based stock recommendation system using CrewAI with four specialized agents for market analysis and company insights.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/Agentic_AI" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">🔍 Vector Database GenAI</h3>
+                        <p class="project-description">
+                            Advanced RAG system with vector embeddings and semantic search capabilities.
+                        </p>
+                    </div>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Vector DB</span>
+                            <span class="tech-tag">RAG Pipeline</span>
+                            <span class="tech-tag">Pinecone</span>
+                            <span class="tech-tag">Embeddings</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Upashak653/vectorDB_GenAI" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h4>RAG Using Haystack</h4>
-                    <p>Implemented Retrieval-Augmented Generation (RAG) system using Haystack framework for enhanced question-answering capabilities.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/RAG_Using_Haystack" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">📝 Intelligent MCQ Generator</h3>
+                        <p class="project-description">
+                            AI-powered educational content generator with Hugging Face integration and NLP pipeline.
+                        </p>
+                    </div>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">T5</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Upashak653/mcqgen" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h4>AI Creator - GenAI SaaS Platform</h4>
-                    <p>A full-stack GenAI-powered SaaS platform for content and code generation using Gemini API, built with Next.js, Express.js, and Tailwind CSS.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/ai-content-generator" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">🧠 AI Mental Health Chatbot</h3>
+                        <p class="project-description">
+                            Deep learning-powered chatbot providing support and guidance for mental health.
+                        </p>
+                    </div>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Chatbot</span>
+                            <span class="tech-tag">Healthcare AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <h4>Netflix Data Analysis & Sentiment Analysis</h4>
-                    <p>Comprehensive analysis of Netflix data with sentiment analysis to understand user preferences and content trends.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/NetFlix_Data_Analysis_and_Sentiment_Analysis" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-header">
+                        <h3 class="project-title">💰 Crypto Tracker Application</h3>
+                        <p class="project-description">
+                            Full-stack cryptocurrency tracking application with real-time monitoring and analytics.
+                        </p>
                     </div>
-                </div>
-
-                <div class="project-card">
-                    <h4>Music Recommendation System</h4>
-                    <p>Developed an intelligent music recommendation system using machine learning algorithms to suggest personalized music based on user preferences.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/Music_recommendation_system" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h4>Mental Health Chatbot (Deep Learning)</h4>
-                    <p>Built an AI-powered mental health chatbot using deep learning techniques to provide support and guidance to users.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/Mental_health_chatbot" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h4>Crypto Currency Tracker</h4>
-                    <p>A full-stack cryptocurrency tracking application built with React.js, Express.js, Node.js, and Tailwind CSS for real-time crypto monitoring.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Upashak653/crypto_stalker" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
+                    <div class="project-content">
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Experience -->
-        <section class="section">
-            <h3><i class="fas fa-briefcase section-icon"></i>Experience</h3>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 2rem; text-align: center;">
+                Interested in collaborating on AI projects or discussing opportunities? 
+                I'd love to hear from you!
+            </p>
             
-            <div class="experience-item">
-                <h4>AI/ML Intern</h4>
-                <h5>InternSELITE</h5>
-                <div class="date">January 2025 - March 2025</div>
-                <p>Worked on machine learning models for sentiment analysis, data analysis, and recommendation systems using STOPWORDS, NLTK, SentimentIntensityAnalyzer, WordCloud, and WordNetLemmatizer.</p>
+            <div class="contact-links">
+                <a href="https://github.com/Upashak653" class="contact-link" target="_blank">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span>GitHub</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/upashak-gayen-3971a5328" class="contact-link" target="_blank">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+                
+                <a href="mailto:upashak1817@gmail.com" class="contact-link">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span>Email</span>
+                </a>
             </div>
-
-            <div class="experience-item">
-                <h4>Full Stack Intern</h4>
-                <h5>CodeAlpha</h5>
-                <div class="date">November 2024 - December 2024</div>
-                <p>Developed full-stack web applications using MERN stack with Socket.IO. Collaborated on team projects and gained hands-on experience with modern web development technologies.</p>
+            
+            <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(124, 58, 237, 0.2);">
+                <p style="color: #64748b;">
+                    © 2025 Upashak Gayen. Built with passion for AI and innovation.
+                </p>
             </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section">
-            <h3><i class="fas fa-graduation-cap section-icon"></i>Education</h3>
-            <div class="education-item">
-                <h4>Bachelor of Computer Science and Engineering</h4>
-                <p>Government College of Engineering and Leather Technology</p>
-                <div class="date">2022 - Present</div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="section">
-            <h3><i class="fas fa-envelope section-icon"></i>Get In Touch</h3>
-            <form class="contact-form" action="mailto:upashak1817@gmail.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add scroll animation
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+
+        // Animate cards on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -694,12 +783,13 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        // Observe all cards for animation
+        document.querySelectorAll('.experience-card, .project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
         });
     </script>
 </body>
-</html> 
+</html>
