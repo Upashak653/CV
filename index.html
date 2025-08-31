@@ -191,6 +191,76 @@
             border-radius: 2px;
         }
 
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124, 58, 237, 0.4);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #60a5fa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
         /* Experience Cards */
         .experience-grid {
             display: grid;
@@ -400,8 +470,8 @@
         <nav class="nav container">
             <a href="#home" class="logo">Upashak Gayen</a>
             <ul class="nav-links">
-                <li><a href="CV(4).pdf" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="CV (6).pdf" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -414,7 +484,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="floating">Upashak Gayen</h1>
-                <p class="subtitle">AI/ML Engineer & Agentic AI Specialist</p>
+                <p class="subtitle">AI/ML Engineer & Agentic AI Engineer</p>
                 <p class="description">
                     Passionate about building intelligent systems that solve real-world problems. 
                     Specialized in Agentic AI, AutoGen, LangGraph, and multi-agent systems with 
@@ -424,6 +494,7 @@
                 <div class="tech-stack">
                     <span class="tech-badge">🤖 AutoGen</span>
                     <span class="tech-badge">🕸️ LangGraph</span>
+                    <span class="tech-badge">🕸️ LangSmith</span>
                     <span class="tech-badge">🧠 OpenAI</span>
                     <span class="tech-badge">🔷 Gemini</span>
                     <span class="tech-badge">🤗 Hugging Face</span>
@@ -444,6 +515,154 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="skill-title">Programming & Data</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">NoSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="skill-title">Machine Learning & Deep Learning</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">Transformers</span>
+                        <span class="skill-tag">Diffusion</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="skill-title">Generative AI & Agentic AI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLMs</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Multi-Agent</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">CrewAI</span>
+                        <span class="skill-tag">AutoGen</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">LangSmith</span>
+                        <span class="skill-tag">Haystack</span>
+                        <span class="skill-tag">Fine-tuning</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="skill-title">Vector Databases & Search</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pinecone</span>
+                        <span class="skill-tag">Vector Search</span>
+                        <span class="skill-tag">Embeddings</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="skill-title">Data Processing & Visualization</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">WordCloud</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="skill-title">Deployment & DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Kubeflow</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="skill-title">Frameworks & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">MCP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="skill-title">Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem-solving</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
@@ -453,42 +672,42 @@
                 <div class="experience-card">
                     <div class="card-header">
                         <div class="card-icon">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-sitemap"></i>
                         </div>
                         <div>
-                            <h3 class="card-title">AutoGen</h3>
+                            <h3 class="card-title">Topic Generator & Summarizer</h3>
                             <p class="card-subtitle">LangGraph • OpenAI • GenAI Integration • GEMINI</p>
                         </div>
                     </div>
                     <p class="card-description">
-                        Built full GenAI-powered autogen project for building a project which can generate and a summarize on a given topic.Helps in automating the process of generating topics information and summarizing them through user feedback.
+                        Built full GenAI-powered autogen project for building a project which can generate and summarize on a given topic. Helps in automating the process of generating topics information and summarizing them through user feedback.
                     </p>
                     <div class="tech-tags">
                         <span class="tech-tag">LangGraph</span>
                         <span class="tech-tag">OpenAI</span>
                         <span class="tech-tag">GEMINI</span>
-                        <span class="tech-tag">GenAI </span>
+                        <span class="tech-tag">GenAI</span>
                     </div>
                 </div>
 
                 <div class="experience-card">
                     <div class="card-header">
                         <div class="card-icon">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-lightbulb"></i>
                         </div>
                         <div>
-                            <h3 class="card-title">AutoGen</h3>
+                            <h3 class="card-title">StartUp Recommendation System</h3>
                             <p class="card-subtitle">AutoGen • OpenAI • GenAI Integration • GEMINI</p>
                         </div>
                     </div>
                     <p class="card-description">
-                        Built full GenAI-powered autogen project for building a StartUp Recommendation,validation system using AUTOGEN(Microsoft).Helps in automating the process of generating business ideas and validating them through user feedback.
+                        Built full GenAI-powered autogen project for building a StartUp Recommendation and validation system using AUTOGEN(Microsoft). Helps in automating the process of generating business ideas and validating them through user feedback.
                     </p>
                     <div class="tech-tags">
                         <span class="tech-tag">AutoGen</span>
                         <span class="tech-tag">OpenAI</span>
                         <span class="tech-tag">GEMINI</span>
-                        <span class="tech-tag">GenAI </span>
+                        <span class="tech-tag">GenAI</span>
                     </div>
                 </div>
 
@@ -683,20 +902,20 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">🧠 AI Mental Health Chatbot</h3>
+                        <h3 class="project-title">📈 AI Stock Recommendation System</h3>
                         <p class="project-description">
-                            Deep learning-powered chatbot providing support and guidance for mental health.
+                            CrewAI-powered system with specialized agents for market analysis and investment insights.
                         </p>
                     </div>
                     <div class="project-content">
                         <div class="tech-tags">
-                            <span class="tech-tag">Deep Learning</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Chatbot</span>
-                            <span class="tech-tag">Healthcare AI</span>
+                            <span class="tech-tag">CrewAI</span>
+                            <span class="tech-tag">Multi-Agent</span>
+                            <span class="tech-tag">Financial Analysis</span>
+                            <span class="tech-tag">Real-time Data</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/Upashak653/Agentic_AI" class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -705,20 +924,20 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">💰 Crypto Tracker Application</h3>
+                        <h3 class="project-title">🎯 Fine-tuned DistilBERT for Sentiment Analysis</h3>
                         <p class="project-description">
-                            Full-stack cryptocurrency tracking application with real-time monitoring and analytics.
+                            IMDB sentiment classifier using fine-tuned DistilBERT with optimized training pipeline.
                         </p>
                     </div>
                     <div class="project-content">
                         <div class="tech-tags">
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">DistilBERT</span>
+                            <span class="tech-tag">Hugging Face</span>
+                            <span class="tech-tag">Fine-tuning</span>
+                            <span class="tech-tag">NLP</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/Upashak653/FineTune_using_HuggingFace_models" class="project-link">
                                 <i class="fab fa-github"></i> View Code
                             </a>
                         </div>
@@ -809,7 +1028,7 @@
         }, observerOptions);
 
         // Observe all cards for animation
-        document.querySelectorAll('.experience-card, .project-card').forEach(card => {
+        document.querySelectorAll('.experience-card, .project-card, .skill-category').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
