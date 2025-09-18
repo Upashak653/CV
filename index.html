@@ -6,11 +6,84 @@
     <title>Upashak Gayen - AI/ML Engineer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            #chatbot-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #007bff;
+        color: #fff;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* Chatbot window */
+    #chatbot {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: #fff;   /* solid background */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    z-index: 9999;      /* ensure it stays above everything */
+    }
+    #chat-header {
+        background: #007bff;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    #chat-header span {
+        float: right;
+        cursor: pointer;
+    }
+
+    #chat-body {
+        padding: 10px;
+        flex-grow: 1;
+        overflow-y: auto;
+        font-size: 14px;
+    }
+
+    .user-msg { text-align: right; color: #007bff; margin: 5px 0; }
+    .bot-msg { text-align: left; color: #333; margin: 5px 0; }
+
+    #chat-input {
+        display: flex;
+        border-top: 1px solid #ccc;
+    }
+
+    #chat-input input {
+        flex: 1;
+        border: none;
+        padding: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #chat-input button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-bottom-right-radius: 10px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -470,7 +543,7 @@
         <nav class="nav container">
             <a href="#home" class="logo">Upashak Gayen</a>
             <ul class="nav-links">
-                <li><a href="CV (6).pdf" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
+                <li><a href="CV (3).pdf" onclick="openForm(Event)" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -478,6 +551,27 @@
             </ul>
         </nav>
     </header>
+    <!-- Chatbot Window -->
+<div id="chatbot">
+  <div id="chat-header">Chat with me <span onclick="toggleChat()">✖</span></div>
+  <div id="chat-body"></div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Type a message..." 
+           onkeypress="if(event.key==='Enter'){sendMessage()}">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+    <div id="downloadForm" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); padding:20px; background:#fff; color:#111; width:320px; z-index:2000; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.25);">
+        <h3 style="margin-bottom:12px;">Enter details to download CV</h3>
+        <input id="name" type="text" placeholder="Your name" style="width:100%; padding:8px; margin-bottom:10px; border-radius:6px;" />
+        <input id="email" type="email" placeholder="Your email" style="width:100%; padding:8px; margin-bottom:12px; border-radius:6px;" />
+        <div style="display:flex; gap:8px; justify-content:flex-end;">
+            <button onclick="closeForm()" style="padding:8px 12px; border-radius:6px; border:1px solid #ccc; background:#f3f3f3;">Cancel</button>
+            <button id="submitBtn" onclick="submitForm()" style="padding:8px 12px; border-radius:6px; border:none; background:#7c3aed; color:white;">Submit & Download</button>
+        </div>
+        <p id="formMsg" style="font-size:12px; color:#666; margin-top:8px; display:none;"></p>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -662,6 +756,8 @@
             </div>
         </div>
     </section>
+<div id="chatbot-btn" onclick="toggleChat()">💬</div>
+
 
     <!-- Experience Section -->
     <section id="experience" class="section">
@@ -988,6 +1084,143 @@
     </section>
 
     <script>
+        function toggleChat() {
+  const chat = document.getElementById("chatbot");
+  const chatBody = document.getElementById("chat-body");
+
+  if (chat.style.display === "flex") {
+    chat.style.display = "none";
+  } else {
+    chat.style.display = "flex";
+
+    // If no messages yet, start with bot greeting
+    if (chatBody.innerHTML.trim() === "") {
+      setTimeout(() => {
+        chatBody.innerHTML += `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, or contact info.</div>`;
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 300);
+    }
+  }
+}
+
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const chatBody = document.getElementById("chat-body");
+
+  // Show user message
+  chatBody.innerHTML += `<div class="user-msg">${msg}</div>`;
+
+  // Generate bot reply (simple hardcoded responses)
+  let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', or 'Skills'.";
+
+  if (msg.toLowerCase().includes("cv")) reply = "You can download my CV using the 'Download CV' button.";
+  else if (msg.toLowerCase().includes("contact")) reply = "You can reach me at: upashak1817@gmail.com";
+  else if (msg.toLowerCase().includes("skills")) reply = "My key skills are: AI, ML, Web Development, and Cloud.";
+  else if (msg.toLowerCase().includes("hello")) reply = "Hello again! How can I assist you?";
+
+  // Show bot message
+  setTimeout(() => {
+    chatBody.innerHTML += `<div class="bot-msg">${reply}</div>`;
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 500);
+
+  input.value = "";
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+//cv download form and logging
+        /* configuration */
+        const CV_FILE = 'CV (6).pdf'; // <-- file name placed next to index.html
+        const DOWNLOAD_NAME = 'Upashak_Gayen_CV.pdf'; // name the file will be downloaded as
+        const LOG_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzHB2_sS8xNwuQVQuHMBcJryfnE_3wo4U2aqRiklWC8qan_aaPiRzaY03g548RkDlb4/exec'; // <-- replace with your Apps Script web app or your server endpoint
+
+        /* UI helpers */
+        function openForm(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        document.getElementById('downloadForm').style.display = 'block';
+        document.getElementById('formMsg').style.display = 'none';
+        }
+
+        function closeForm() {
+        document.getElementById('downloadForm').style.display = 'none';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('formMsg').style.display = 'none';
+        }
+
+        /* main submit function */
+        async function submitForm() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const btn = document.getElementById('submitBtn');
+        const msg = document.getElementById('formMsg');
+
+        if (!name || !email) {
+            alert('Please enter both name and email.');
+            return;
+        }
+
+        // basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Logging...';
+        msg.style.display = 'block';
+        msg.textContent = 'Sending details...';
+
+        const payload = {
+            name,
+            email,
+            time: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            page: window.location.href
+        };
+
+        let logged = false;
+        try {
+            // try to POST JSON to your endpoint (Apps Script or your server)
+            const r = await fetch(LOG_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            mode: 'cors' // normal mode — if your server supports CORS this is best
+            });
+            // if the server returns JSON OK
+            if (r && (r.ok || r.status === 200)) {
+            logged = true;
+            }
+        } catch (err) {
+            // network/CORS may fail — we'll still continue to download
+            console.warn('Logging failed:', err);
+        }
+
+        // small delay so the UI shows the "done" message
+        msg.textContent = logged ? 'Logged — starting download...' : 'Could not log (CORS/network). Starting download anyway...';
+
+        // force file download (works even if browser would open the PDF)
+        try {
+            const a = document.createElement('a');
+            a.href = encodeURI(CV_FILE);
+            a.download = DOWNLOAD_NAME;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        } catch (err) {
+            // fallback: change location (may open in-browser)
+            window.location.href = CV_FILE;
+        }
+
+        // cleanup
+        btn.disabled = false;
+        btn.textContent = 'Submit & Download';
+        setTimeout(closeForm, 800);
+        }
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
