@@ -808,14 +808,69 @@
                             <p class="card-subtitle">AutoGen • OpenAI • GenAI Integration • GEMINI</p>
                         </div>
                     </div>
-                    <p class="card-description">
-                        Built full GenAI-powered autogen project for building a StartUp Recommendation and validation system using AUTOGEN(Microsoft). Helps in automating the process of generating business ideas and validating them through user feedback.
-                    </p>
+                    <strong>Startup Recommender using AutoGen</strong><br>
+                        <strong>Situation:</strong> Entrepreneurs struggle to find suitable startup ideas based on their skills and market trends<br>
+                        <strong>Task:</strong> Develop an AI-powered system to recommend personalized startup ideas with market analysis<br>
+                        <strong>Action:</strong> Built multi-agent system using Microsoft AutoGen with specialized agents for market research, skill analysis, and recommendation generation. Integrated real-time data sources and implemented collaborative filtering<br>
+                        <strong>Result:</strong> Achieved 85% user satisfaction rate with personalized recommendations and reduced idea research time by 70%<br>
+                        <em>Tech: Python, AutoGen, OpenAI API, Streamlit</em><br>
+                        <a href="https://github.com/Upashak653/AutoGen-StartUp_recommender_-" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
                     <div class="tech-tags">
                         <span class="tech-tag">AutoGen</span>
                         <span class="tech-tag">OpenAI</span>
                         <span class="tech-tag">GEMINI</span>
                         <span class="tech-tag">GenAI</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">MCQ & Question Generator</h3>
+                            <p class="card-subtitle">OpenAI • Streamlit • GenAI</p>
+                        </div>
+                    </div>
+                    <strong>MCQ & Question Generator</strong><br>
+                        <strong>Situation:</strong> Educators needed automated tools to generate diverse, quality assessment questions from educational content<br>
+                        <strong>Task:</strong> Create an intelligent system that generates multiple-choice questions and open-ended questions from various content formats<br>
+                        <strong>Action:</strong> Developed NLP pipeline using transformer models to extract key concepts, generate distractors for MCQs, and create contextual questions. Implemented difficulty level adjustment and content categorization<br>
+                        <strong>Result:</strong> Generated 95% grammatically correct questions with 80% relevance score, saving educators 60% question preparation time<br>
+                        <em>Tech: Python, Transformers, OpenAI API, Streamlit</em><br>
+                        <a href="https://github.com/Upashak653/mcqgen" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">GenAI</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">AI Interview Taker (Tech Stack Based)</h3>
+                            <p class="card-subtitle">Streamlit • GenAI • GEMINI</p>
+                        </div>
+                    </div>
+                    <strong>AI Interview Taker (Tech Stack Based)</strong><br>
+<strong>Situation:</strong> HR teams needed efficient technical interview screening for candidates with different tech stack expertise<br>
+<strong>Task:</strong> Build an AI interviewer that conducts personalized technical interviews based on candidate's preferred tech stack<br>
+<strong>Action:</strong> Created conversational AI using speech-to-text, natural language understanding, and dynamic question generation. Implemented real-time code evaluation and behavioral assessment modules<br>
+<strong>Result:</strong> Reduced initial screening time by 75% and achieved 90% correlation with human interviewer ratings<br>
+<em>Tech: Python, GenAI , GEMINI , Streamlit</em><br>
+<a href="https://github.com/Upashak653/ai-interviewer" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+                    <div class="tech-tags">
+                        <span class="tech-tag">GEMINI</span>
+                        <span class="tech-tag">GenAI</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">Streamlit</span>
                     </div>
                 </div>
 
@@ -1096,75 +1151,116 @@
     </section>
 
     <script>
-  function toggleChat() {
-  const chat = document.getElementById("chatbot");
-  const chatBody = document.getElementById("chat-body");
+    function toggleChat() {
+    const chat = document.getElementById("chatbot");
+    const chatBody = document.getElementById("chat-body");
 
-  if (chat.style.display === "flex") {
-    // Closing chat → clear history
-    chat.style.display = "none";
-    chatBody.innerHTML = "";  
-  } else {
-    // Opening chat → show greeting fresh
-    chat.style.display = "flex";
-    chatBody.innerHTML = `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, GitHub, LinkedIn, or contact info.</div>`;
-  }
-}
-
-
-function sendMessage() {
-  const input = document.getElementById("user-input");
-  const msg = input.value.trim();
-  if (!msg) return;
-
-  const chatBody = document.getElementById("chat-body");
-
-  // Show user message
-  chatBody.innerHTML += `<div class="user-msg">${msg}</div>`;
-
-  // Generate bot reply (simple hardcoded responses)
-  let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', GitHub, LinkedIn, or 'Skills'.";
-
-  if (msg.toLowerCase().includes("cv")) {
-  reply = `📄 Sure! You can <a href="CV (3).pdf" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">download my CV here</a>.`;
-    } 
-    else if (msg.toLowerCase().includes("contact")) {
-    reply = `📧 You can reach me directly at <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>.`;
-    } 
-    else if (msg.toLowerCase().includes("skills")) {
-    reply = `💡 My key skills are:<br>
-    • Artificial Intelligence 🤖<br>
-    • Machine Learning 📊<br>
-    • Web Development 🌐<br>
-    • Cloud Computing ☁️<br><br>
-    Would you like me to share some <a href="#projects" style="color:#007bff; text-decoration:none; font-weight:bold;">recent projects</a>?`;
-    } 
-    else if (msg.toLowerCase().includes("hello") || msg.toLowerCase().includes("hi")) {
-    reply = `👋 Hello! Great to see you here.<br>
-    You can ask me about:<br>
-    👉 <a href="CV (3).pdf" onclick="sendQuick('cv')" style="color:#007bff; text-decoration:none; font-weight:bold;">My CV</a><br>
-    👉 <a href="#" onclick="sendQuick('skills')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Skills</a><br>
-    👉 <a href="#" onclick="sendQuick('contact')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Contact Info</a>
-    👉 <a href="#" onclick="sendQuick('github')" style="color:#007bff; text-decoration:none; font-weight:bold;">My GitHub Profile</a>`
+    if (chat.style.display === "flex") {
+        // Closing chat → clear history
+        chat.style.display = "none";
+        chatBody.innerHTML = "";  
+    } else {
+        // Opening chat → show greeting fresh
+        chat.style.display = "flex";
+        chatBody.innerHTML = `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, GitHub, LinkedIn, or contact info.</div>`;
     }
-    else if (msg.toLowerCase().includes("github")) {
-    reply = `💻 You can check out my projects on <a href="https://github.com/Upashak653" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">GitHub</a>.`;
-    } 
-    else if (msg.toLowerCase().includes("linkedin")) {
-    reply = `🔗 Let’s connect on <a href="https://www.linkedin.com/in/upashak-gayen-3971a5328" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">LinkedIn</a>.`;
-    } 
-    else if (msg.toLowerCase().includes("contact")) {
-    reply = `📞 You can reach me at: <a href="tel:9330714672" style="color:#007bff; text-decoration:none; font-weight:bold;">9330714672</a><br>
-            📧 Or email me at: <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>`;
     }
-    else if (
-    msg.toLowerCase().includes("bye") || 
-    msg.toLowerCase().includes("exit") || 
-    msg.toLowerCase().includes("quit") || 
-    msg.toLowerCase().includes("close") || 
-    msg.toLowerCase().includes("see you")
-    ) {
-    reply = "👋 Thanks for chatting with me! Have a great day ahead. ✨";
+
+
+    function sendMessage() {
+    const input = document.getElementById("user-input");
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    const chatBody = document.getElementById("chat-body");
+
+    // Show user message
+    chatBody.innerHTML += `<div class="user-msg">${msg}</div>`;
+
+    // Generate bot reply (simple hardcoded responses)
+    let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', GitHub, LinkedIn, or 'Skills'.";
+
+    if (msg.toLowerCase().includes("cv")) {
+    reply = `📄 Sure! You can <a href="CV (3).pdf" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">download my CV here</a>.`;
+        } 
+        else if (msg.toLowerCase().includes("contact")) {
+        reply = `📧 You can reach me directly at <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>.`;
+        } 
+        else if (msg.toLowerCase().includes("skills")) {
+        reply = `💡 My key skills are:<br>
+        • Artificial Intelligence 🤖<br>
+        • Machine Learning 📊<br>
+        • Web Development 🌐<br>
+        • Cloud Computing ☁️<br><br>
+        Would you like me to share some <a href="#projects" style="color:#007bff; text-decoration:none; font-weight:bold;">recent projects</a>?`;
+        } 
+        else if (msg.toLowerCase().includes("hello") || msg.toLowerCase().includes("hi")) {
+        reply = `👋 Hello! Great to see you here.<br>
+        You can ask me about:<br>
+        👉 <a href="CV (3).pdf" onclick="sendQuick('cv')" style="color:#007bff; text-decoration:none; font-weight:bold;">My CV</a><br>
+        👉 <a href="#" onclick="sendQuick('skills')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Skills</a><br>
+        👉 <a href="#" onclick="sendQuick('contact')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Contact Info</a>
+        👉 <a href="#" onclick="sendQuick('github')" style="color:#007bff; text-decoration:none; font-weight:bold;">My GitHub Profile</a>`
+        }
+        else if (msg.toLowerCase().includes("github")) {
+        reply = `💻 You can check out my projects on <a href="https://github.com/Upashak653" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">GitHub</a>.`;
+        } 
+        else if (msg.toLowerCase().includes("linkedin")) {
+        reply = `🔗 Let’s connect on <a href="https://www.linkedin.com/in/upashak-gayen-3971a5328" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">LinkedIn</a>.`;
+        } 
+        else if (msg.toLowerCase().includes("contact")) {
+        reply = `📞 You can reach me at: <a href="tel:9330714672" style="color:#007bff; text-decoration:none; font-weight:bold;">9330714672</a><br>
+                📧 Or email me at: <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>`;
+        }
+        // Replace your existing projects condition with this:
+        else if (msg.toLowerCase().includes("projects")) {
+            reply = `🚀 Here are my recent projects:<br><br>
+
+                <strong>AI_CREATOR</strong><br>
+                A full-stack GenAI-powered SaaS platform for content and code generation using Gemini API.<br>
+                <em>Tech: Next.js, Express.js, Node.js, Tailwind CSS</em><br>
+                <a href="https://github.com/Upashak653/ai-content-generator" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>Mental Health Chatbot</strong><br>
+                Deep learning-based chatbot for mental health support with NLP and conversational flow.<br>
+                <em>Tech: Python, TensorFlow, Flask</em><br>
+                <a href="https://github.com/Upashak653/Mental_health_chatbot" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>Vector DB + RAG</strong><br>
+                Built a vector database system integrated with GenAI for similarity search using Pinecone.<br>
+                <em>Tech: Pinecone, Python, LangChain</em><br>
+                <a href="https://github.com/Upashak653/vectorDB_GenAI" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>IMDB Sentiment Analysis</strong><br>
+                Fine-tuned DistilBERT on IMDB dataset for sentiment classification (69% validation accuracy).<br>
+                <em>Tech: Hugging Face Transformers, PyTorch</em><br>
+                <a href="https://github.com/Upashak653/FineTune_using_HuggingFace_models" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>Agentic_AI (Stock Recommender)</strong><br>
+                AI-based stock recommendation system with CrewAI agents analyzing market & financial data.<br>
+                <em>Tech: CrewAI, Python, Multi-Agent Systems</em><br>
+                <a href="https://github.com/Upashak653/Agentic_AI" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>Autonomous Web Agent</strong><br>
+                LLM-powered agent for real-time browsing, extraction & summarization of web content.<br>
+                <em>Tech: Python, LangChain, LLMs</em><br>
+                <a href="https://github.com/Upashak653/Autonomous_Web_Agent_and_Real_Time_Research" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                <strong>Diffusion Image Generation</strong><br>
+                Image generation using diffusion models with customizable prompts & pipelines.<br>
+                <em>Tech: Diffusion Models, Hugging Face, Python</em><br>
+                <a href="https://github.com/Upashak653/Diffusion_image_generation" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+
+                Want to see more? Check out my <a href="https://github.com/Upashak653" target="_blank" style="color:#007bff;">GitHub Profile</a>`;
+        }
+        else if (
+        msg.toLowerCase().includes("bye") || 
+        msg.toLowerCase().includes("exit") || 
+        msg.toLowerCase().includes("quit") || 
+        msg.toLowerCase().includes("close") || 
+        msg.toLowerCase().includes("see you")
+        ) {
+        reply = "👋 Thanks for chatting with me! Have a great day ahead. ✨";
 
     // Auto-close chatbot after 2 seconds
     setTimeout(() => {
