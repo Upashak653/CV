@@ -1096,7 +1096,7 @@
     // If no messages yet, start with bot greeting
     if (chatBody.innerHTML.trim() === "") {
       setTimeout(() => {
-        chatBody.innerHTML += `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, or contact info.</div>`;
+        chatBody.innerHTML += `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, GitHub, LinkedIn, or contact info.</div>`;
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 300);
     }
@@ -1116,10 +1116,53 @@ function sendMessage() {
   // Generate bot reply (simple hardcoded responses)
   let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', or 'Skills'.";
 
-  if (msg.toLowerCase().includes("cv")) reply = "You can download my CV using the 'Download CV' button.";
-  else if (msg.toLowerCase().includes("contact")) reply = "You can reach me at: upashak1817@gmail.com";
-  else if (msg.toLowerCase().includes("skills")) reply = "My key skills are: AI, ML, Web Development, and Cloud.";
-  else if (msg.toLowerCase().includes("hello")) reply = "Hello again! How can I assist you?";
+  if (msg.toLowerCase().includes("cv")) {
+  reply = `📄 Sure! You can <a href="CV (3).pdf" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">download my CV here</a>.`;
+    } 
+    else if (msg.toLowerCase().includes("contact")) {
+    reply = `📧 You can reach me directly at <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>.`;
+    } 
+    else if (msg.toLowerCase().includes("skills")) {
+    reply = `💡 My key skills are:<br>
+    • Artificial Intelligence 🤖<br>
+    • Machine Learning 📊<br>
+    • Web Development 🌐<br>
+    • Cloud Computing ☁️<br><br>
+    Would you like me to share some <a href="#projects" style="color:#007bff; text-decoration:none; font-weight:bold;">recent projects</a>?`;
+    } 
+    else if (msg.toLowerCase().includes("hello") || msg.toLowerCase().includes("hi")) {
+    reply = `👋 Hello! Great to see you here.<br>
+    You can ask me about:<br>
+    👉 <a href="CV (3).pdf" onclick="sendQuick('cv')" style="color:#007bff; text-decoration:none; font-weight:bold;">My CV</a><br>
+    👉 <a href="#" onclick="sendQuick('skills')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Skills</a><br>
+    👉 <a href="#" onclick="sendQuick('contact')" style="color:#007bff; text-decoration:none; font-weight:bold;">My Contact Info</a>
+    👉 <a href="#" onclick="sendQuick('github')" style="color:#007bff; text-decoration:none; font-weight:bold;">My GitHub Profile</a>`
+    }
+    else if (msg.toLowerCase().includes("github")) {
+    reply = `💻 You can check out my projects on <a href="https://github.com/Upashak653" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">GitHub</a>.`;
+    } 
+    else if (msg.toLowerCase().includes("linkedin")) {
+    reply = `🔗 Let’s connect on <a href="https://www.linkedin.com/in/upashak-gayen-3971a5328" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">LinkedIn</a>.`;
+    } 
+    else if (msg.toLowerCase().includes("contact")) {
+    reply = `📞 You can reach me at: <a href="tel:9330714672" style="color:#007bff; text-decoration:none; font-weight:bold;">9330714672</a><br>
+            📧 Or email me at: <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>`;
+    }
+    else if (
+    msg.toLowerCase().includes("bye") || 
+    msg.toLowerCase().includes("exit") || 
+    msg.toLowerCase().includes("quit") || 
+    msg.toLowerCase().includes("close") || 
+    msg.toLowerCase().includes("see you")
+    ) {
+    reply = "👋 Thanks for chatting with me! Have a great day ahead. ✨";
+
+    // Auto-close chatbot after 2 seconds
+    setTimeout(() => {
+        document.getElementById("chatbot").style.display = "none";
+        document.getElementById("chat-body").innerHTML = ""; // Clear chat history
+    }, 2000);
+    }
 
   // Show bot message
   setTimeout(() => {
@@ -1129,6 +1172,11 @@ function sendMessage() {
 
   input.value = "";
   chatBody.scrollTop = chatBody.scrollHeight;
+}
+//
+function sendQuick(text) {
+  document.getElementById("user-input").value = text;
+  sendMessage();
 }
 //cv download form and logging
         /* configuration */
