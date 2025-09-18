@@ -1096,24 +1096,21 @@
     </section>
 
     <script>
-        function toggleChat() {
+  function toggleChat() {
   const chat = document.getElementById("chatbot");
   const chatBody = document.getElementById("chat-body");
 
   if (chat.style.display === "flex") {
+    // Closing chat → clear history
     chat.style.display = "none";
+    chatBody.innerHTML = "";  
   } else {
+    // Opening chat → show greeting fresh
     chat.style.display = "flex";
-
-    // If no messages yet, start with bot greeting
-    if (chatBody.innerHTML.trim() === "") {
-      setTimeout(() => {
-        chatBody.innerHTML += `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, GitHub, LinkedIn, or contact info.</div>`;
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 300);
-    }
+    chatBody.innerHTML = `<div class="bot-msg">Hello! 👋 I’m your assistant. You can ask me about my CV, skills, GitHub, LinkedIn, or contact info.</div>`;
   }
 }
+
 
 function sendMessage() {
   const input = document.getElementById("user-input");
@@ -1126,7 +1123,7 @@ function sendMessage() {
   chatBody.innerHTML += `<div class="user-msg">${msg}</div>`;
 
   // Generate bot reply (simple hardcoded responses)
-  let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', or 'Skills'.";
+  let reply = "I didn’t understand that. Try asking about 'CV', 'Contact', GitHub, LinkedIn, or 'Skills'.";
 
   if (msg.toLowerCase().includes("cv")) {
   reply = `📄 Sure! You can <a href="CV (3).pdf" target="_blank" style="color:#007bff; text-decoration:none; font-weight:bold;">download my CV here</a>.`;
