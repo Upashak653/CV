@@ -20,6 +20,10 @@
 
     /* Chatbot window */
     #chatbot {
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     position: fixed;
     bottom: 80px;
     right: 20px;
@@ -41,6 +45,8 @@
         font-weight: bold;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
     }
 
     #chat-header span {
@@ -54,7 +60,11 @@
         overflow-y: auto;
         font-size: 14px;
     }
-
+    .thinking {
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    margin: 5px 0;
+  }
     .user-msg { text-align: right; color: #007bff; margin: 5px 0;  background: #f7f7f7;
         color: #000000;
         padding: 8px 12px;
@@ -1151,6 +1161,72 @@
     </section>
 
     <script>
+
+            const chatBody = document.getElementById("chat-body");
+
+        function toggleChat() {
+            document.getElementById("chatbot").style.display = "none";
+        }
+
+        function typeWriterEffect(element, text, speed = 40) {
+            let i = 0;
+            element.innerHTML = "";
+            function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+            }
+            typing();
+        }
+
+        function showThinking() {
+            let thinkingMsg = document.createElement("div");
+            thinkingMsg.className = "thinking";
+            thinkingMsg.innerHTML = "💭 Thinking";
+            chatBody.appendChild(thinkingMsg);
+
+            let dots = 0;
+            let interval = setInterval(() => {
+            dots = (dots + 1) % 4;
+            thinkingMsg.innerHTML = "💭 Thinking" + ".".repeat(dots);
+            }, 500);
+
+            return { thinkingMsg, interval };
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("user-input");
+            const userText = input.value.trim();
+            if (!userText) return;
+
+            // Add user message
+            let userMsg = document.createElement("div");
+            userMsg.className = "user-message";
+            userMsg.innerText = userText;
+            chatBody.appendChild(userMsg);
+
+            input.value = "";
+
+            // Show thinking animation
+            let { thinkingMsg, interval } = showThinking();
+
+            // Simulate bot reply after delay
+            setTimeout(() => {
+            clearInterval(interval);
+            chatBody.removeChild(thinkingMsg);
+
+            let botMsg = document.createElement("div");
+            botMsg.className = "bot-message";
+            chatBody.appendChild(botMsg);
+
+            // Typewriter effect reply
+            typeWriterEffect(botMsg, "🚀 Thanks for your message! Here's a smart reply with typing effect.");
+            chatBody.scrollTop = chatBody.scrollHeight;
+            }, 2000);
+        }
+
     function toggleChat() {
     const chat = document.getElementById("chatbot");
     const chatBody = document.getElementById("chat-body");
