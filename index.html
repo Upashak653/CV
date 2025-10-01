@@ -6,6 +6,7 @@
     <title>Upashak Gayen - AI/ML Engineer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
+        
         #chatbot-btn {
             position: fixed;
             bottom: 20px;
@@ -609,6 +610,8 @@
                 
                 <div class="tech-stack">
                     <span class="tech-badge">🤖 AutoGen</span>
+                    <span class="tech-badge">🧩 CrewAI</span>
+                    <span class="tech-badge">🧩 AutoAgent</span>
                     <span class="tech-badge">🕸️ LangGraph</span>
                     <span class="tech-badge">🕸️ LangSmith</span>
                     <span class="tech-badge">🧠 OpenAI</span>
@@ -617,6 +620,7 @@
                     <span class="tech-badge">🦜 LangChain</span>
                     <span class="tech-badge">⚡ RAG Systems</span>
                     <span class="tech-badge">🎯 Vector DB</span>
+                    <span class="tech-badge">☁️ Cloud</span>
                 </div>
 
                 <div class="cta-buttons">
@@ -692,6 +696,7 @@
                         <span class="skill-tag">LangSmith</span>
                         <span class="skill-tag">Haystack</span>
                         <span class="skill-tag">Fine-tuning</span>
+                        <span class="skill-tag">MCP</span>
                     </div>
                 </div>
 
@@ -740,6 +745,7 @@
                         <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">MLflow</span>
                         <span class="skill-tag">Kubeflow</span>
+                        <span class="skill-tag">AWS</span>
                     </div>
                 </div>
 
@@ -757,7 +763,6 @@
                         <span class="skill-tag">Next.js</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">MCP</span>
                     </div>
                 </div>
 
@@ -870,12 +875,12 @@
                         </div>
                     </div>
                     <strong>AI Interview Taker (Tech Stack Based)</strong><br>
-<strong>Situation:</strong> HR teams needed efficient technical interview screening for candidates with different tech stack expertise<br>
-<strong>Task:</strong> Build an AI interviewer that conducts personalized technical interviews based on candidate's preferred tech stack<br>
-<strong>Action:</strong> Created conversational AI using speech-to-text, natural language understanding, and dynamic question generation. Implemented real-time code evaluation and behavioral assessment modules<br>
-<strong>Result:</strong> Reduced initial screening time by 75% and achieved 90% correlation with human interviewer ratings<br>
-<em>Tech: Python, GenAI , GEMINI , Streamlit</em><br>
-<a href="https://github.com/Upashak653/ai-interviewer" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
+                    <strong>Situation:</strong> HR teams needed efficient technical interview screening for candidates with different tech stack expertise<br>
+                    <strong>Task:</strong> Build an AI interviewer that conducts personalized technical interviews based on candidate's preferred tech stack<br>
+                    <strong>Action:</strong> Created conversational AI using speech-to-text, natural language understanding, and dynamic question generation. Implemented real-time code evaluation and behavioral assessment modules<br>
+                    <strong>Result:</strong> Reduced initial screening time by 75% and achieved 90% correlation with human interviewer ratings<br>
+                    <em>Tech: Python, GenAI , GEMINI , Streamlit</em><br>
+                    <a href="https://github.com/Upashak653/ai-interviewer" target="_blank" style="color:#007bff;">View on GitHub</a><br><br>
                     <div class="tech-tags">
                         <span class="tech-tag">GEMINI</span>
                         <span class="tech-tag">GenAI</span>
@@ -1288,6 +1293,15 @@
         reply = `📞 You can reach me at: <a href="tel:9330714672" style="color:#007bff; text-decoration:none; font-weight:bold;">9330714672</a><br>
                 📧 Or email me at: <a href="mailto:upashak1817@gmail.com" style="color:#007bff; text-decoration:none; font-weight:bold;">upashak1817@gmail.com</a>`;
         }
+
+        else if (msg.toLowerCase().includes("past experience") || msg.toLowerCase().includes("experience")) {
+        reply = `I have hands-on experience in <strong>Machine Learning, Generative AI, and Agentic AI</strong>, with multiple end-to-end projects involving model development, fine-tuning, and deployment. <br> During my AI/ML internship, I built NLP-based sentiment analysis models using <strong>NLTK</strong> and <strong>DistilBERT</strong>, and developed recommendation systems leveraging collaborative and hybrid filtering.<br>
+
+I’ve created a <strong>Generative AI SaaS platform</strong> using <strong>Gemini API, Next.js, and Express.js</strong>, integrating LLMs for content and code generation.<br> I’ve also built <strong>RAG pipelines</strong> with <strong>Pinecone and LangChain</strong>, and developed <strong>multi-agent AI systems</strong> using CrewAI and LangGraph for intelligent task orchestration.<br>
+
+My tech stack includes <strong>Python, PyTorch, TensorFlow, Hugging Face Transformers, Docker, FastAPI, and AWS/Azure</strong>.<br> I’m passionate about designing scalable AI solutions that combine LLM applications, vector databases, and cloud deployment to solve real-world problems.<br>`;
+        }
+
         // Replace your existing projects condition with this:
         else if (msg.toLowerCase().includes("projects")) {
             reply = `🚀 Here are my recent projects:<br><br>
