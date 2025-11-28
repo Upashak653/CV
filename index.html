@@ -381,42 +381,7 @@
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
 
-        .stat-card {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(16, 185, 129, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(16, 185, 129, 0.6);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #10b981;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
 
         .hero-content {
             max-width: 800px;
@@ -611,56 +576,7 @@
             border-radius: 2px;
         }
 
-        /* Skill Progress Bars */
-        .skill-progress {
-            margin-top: 1rem;
-        }
 
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            color: #cbd5e1;
-            font-size: 0.9rem;
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #10b981, #34d399);
-            border-radius: 10px;
-            width: 0;
-            transition: width 1.5s ease;
-            position: relative;
-        }
-
-        .skill-fill::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer-bar 2s infinite;
-        }
-
-        @keyframes shimmer-bar {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
 
         /* Copy to Clipboard */
         .copy-btn {
@@ -1111,10 +1027,11 @@
         <nav class="nav container">
             <a href="#home" class="logo">Upashak Gayen</a>
             <ul class="nav-links">
-                <li><a href="CV(5).pdf" onclick="openForm(Event)" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
+                <li><a href="CV(5).pdf" download="Upashak_Gayen_CV.pdf">Download CV</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -1130,16 +1047,7 @@
   </div>
 </div>
 
-    <div id="downloadForm" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); padding:20px; background:#fff; color:#111; width:320px; z-index:2000; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.25);">
-        <h3 style="margin-bottom:12px;">Enter details to download CV</h3>
-        <input id="name" type="text" placeholder="Your name" style="width:100%; padding:8px; margin-bottom:10px; border-radius:6px;" />
-        <input id="email" type="email" placeholder="Your email" style="width:100%; padding:8px; margin-bottom:12px; border-radius:6px;" />
-        <div style="display:flex; gap:8px; justify-content:flex-end;">
-            <button onclick="closeForm()" style="padding:8px 12px; border-radius:6px; border:1px solid #ccc; background:#f3f3f3;">Cancel</button>
-            <button id="submitBtn" onclick="submitForm()" style="padding:8px 12px; border-radius:6px; border:none; background:#7c3aed; color:white;">Submit & Download</button>
-        </div>
-        <p id="formMsg" style="font-size:12px; color:#666; margin-top:8px; display:none;"></p>
-    </div>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -1148,9 +1056,7 @@
                 <h1 class="floating">Upashak Gayen</h1>
                 <p class="subtitle">GenAI Engineer & Agentic AI Specialist</p>
                 <p class="description">
-                    Passionate about building intelligent systems that solve real-world problems. 
-                    Specialized in Agentic AI, AutoGen, LangGraph, and multi-agent systems with 
-                    extensive experience in RAG pipelines, vector databases, and LLM integration.
+                    AI/ML Engineer specializing in Generative AI, RAG pipelines, and Agentic AI with hands-on experience building end-to-end machine learning solutions, from data ingestion to deployment. Skilled in LLM applications, NLP, and multi-agent systems, with a proven track record of developing scalable, production-ready AI solutions. Passionate about applying AI to solve real-world problems and driving measurable business impact.
                 </p>
                 
                 <div class="tech-stack">
@@ -1177,25 +1083,7 @@
                     </a>
                 </div>
 
-                <!-- Stats Section -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="15">0</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="25">0</div>
-                        <div class="stat-label">Technologies Mastered</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="10">0</div>
-                        <div class="stat-label">AI Models Deployed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">% Dedication</div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1354,9 +1242,63 @@
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experience & Expertise</h2>
+            <h2 class="section-title">Professional Experience</h2>
             
             <div class="experience-grid">
+                <!-- AI/ML Intern - Internselite -->
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">AI/ML INTERN - INTERNSELITE</h3>
+                            <p class="card-subtitle">JAN 2025 - MAR 2025</p>
+                        </div>
+                    </div>
+                    <ul class="card-description" style="list-style: disc; padding-left: 20px; line-height: 1.8;">
+                        <li>Developed NLP-based sentiment analysis models using NLTK, WordNetLemmatizer, and SentimentIntensityAnalyzer, achieving 85% accuracy in emotion detection.</li>
+                        <li>Built recommendation systems leveraging collaborative filtering and hybrid approaches.</li>
+                        <li>Automated preprocessing workflows using Python scripts, reducing pipeline time by 30%.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLTK</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">Sentiment Analysis</span>
+                    </div>
+                </div>
+
+                <!-- AI Specialist Intern - Platinum Consulting -->
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">AI SPECIALIST INTERN - PLATINUM CONSULTING AND IT SOLUTION</h3>
+                            <p class="card-subtitle">SEPT 2025 - PRESENT</p>
+                        </div>
+                    </div>
+                    <ul class="card-description" style="list-style: disc; padding-left: 20px; line-height: 1.8;">
+                        <li>Developed 5 success stories architecture using a lambda function.</li>
+                        <li>Created a knowledgebase using pinecone and s3 data for the AI agent.</li>
+                        <li>Helped to Optimize AI Agent Belden using aws flows builder and lex in aws bedrock agent.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS Lambda</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">AWS Bedrock</span>
+                        <span class="tech-tag">Lex</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 4rem;">Key Projects & Expertise</h2>
+            
+            <div class="experience-grid"></div>
                 <div class="experience-card">
                     <div class="card-header">
                         <div class="card-icon">
@@ -1698,12 +1640,69 @@
             </div>
         </div>
     </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">Bachelor of Computer Science and Engineering</h3>
+                            <p class="card-subtitle">Brainware University - Kolkata</p>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        <strong>CGPA: 8/10</strong><br>
+                        <strong>Duration:</strong> 2022 - Present<br>
+                        <strong>Specialization:</strong> Computer Science and Engineering with focus on AI/ML and Leather Technology
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Computer Science</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Engineering</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">12th Percentage: 81%</h3>
+                            <p class="card-subtitle">2020 - 2022</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">10th Percentage: 85%</h3>
+                            <p class="card-subtitle">2012 - 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
             <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 2rem; text-align: center;">
+                📍 Af-139 Krishnapur, Kolkata City<br>
+                📞 9330714672<br><br>
                 Interested in collaborating on AI projects or discussing opportunities? 
                 I'd love to hear from you!
             </p>
@@ -1948,97 +1947,6 @@ function sendQuick(text) {
   document.getElementById("user-input").value = text;
   sendMessage();
 }
-//cv download form and logging
-        /* configuration */
-        const CV_FILE = 'CV(5).pdf'; // <-- file name placed next to index.html
-        const DOWNLOAD_NAME = 'Upashak_Gayen_CV.pdf'; // name the file will be downloaded as
-        const LOG_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzHB2_sS8xNwuQVQuHMBcJryfnE_3wo4U2aqRiklWC8qan_aaPiRzaY03g548RkDlb4/exec'; // <-- replace with your Apps Script web app or your server endpoint
-
-        /* UI helpers */
-        function openForm(e) {
-        if (e && e.preventDefault) e.preventDefault();
-        document.getElementById('downloadForm').style.display = 'block';
-        document.getElementById('formMsg').style.display = 'none';
-        }
-
-        function closeForm() {
-        document.getElementById('downloadForm').style.display = 'none';
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('formMsg').style.display = 'none';
-        }
-
-        /* main submit function */
-        async function submitForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const btn = document.getElementById('submitBtn');
-        const msg = document.getElementById('formMsg');
-
-        if (!name || !email) {
-            alert('Please enter both name and email.');
-            return;
-        }
-
-        // basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = 'Logging...';
-        msg.style.display = 'block';
-        msg.textContent = 'Sending details...';
-
-        const payload = {
-            name,
-            email,
-            time: new Date().toISOString(),
-            userAgent: navigator.userAgent,
-            page: window.location.href
-        };
-
-        let logged = false;
-        try {
-            // try to POST JSON to your endpoint (Apps Script or your server)
-            const r = await fetch(LOG_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-            mode: 'cors' // normal mode — if your server supports CORS this is best
-            });
-            // if the server returns JSON OK
-            if (r && (r.ok || r.status === 200)) {
-            logged = true;
-            }
-        } catch (err) {
-            // network/CORS may fail — we'll still continue to download
-            console.warn('Logging failed:', err);
-        }
-
-        // small delay so the UI shows the "done" message
-        msg.textContent = logged ? 'Logged — starting download...' : 'Could not log (CORS/network). Starting download anyway...';
-
-        // force file download (works even if browser would open the PDF)
-        try {
-            const a = document.createElement('a');
-            a.href = encodeURI(CV_FILE);
-            a.download = DOWNLOAD_NAME;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-        } catch (err) {
-            // fallback: change location (may open in-browser)
-            window.location.href = CV_FILE;
-        }
-
-        // cleanup
-        btn.disabled = false;
-        btn.textContent = 'Submit & Download';
-        setTimeout(closeForm, 800);
-        }
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2174,43 +2082,6 @@ function sendQuick(text) {
             document.getElementById('scrollProgress').style.width = scrolled + '%';
         });
 
-        // Stats Counter Animation
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
-
-        const animateStats = () => {
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-target'));
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        stat.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        stat.textContent = target;
-                    }
-                };
-                updateCounter();
-            });
-        };
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    animateStats();
-                    statsAnimated = true;
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-card').forEach(card => {
-            statsObserver.observe(card);
-        });
-
         // Project Filters
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
@@ -2292,57 +2163,6 @@ function sendQuick(text) {
         }
 
         setTimeout(typeWriter, 500);
-
-        // Skill Progress Bars Animation
-        const skillCategories = document.querySelectorAll('.skill-category');
-        
-        skillCategories.forEach(category => {
-            const skillTags = category.querySelectorAll('.skill-tag');
-            const skillProgress = document.createElement('div');
-            skillProgress.className = 'skill-progress';
-            
-            // Add progress bars for top skills
-            const topSkills = Array.from(skillTags).slice(0, 3);
-            topSkills.forEach((tag, index) => {
-                const skillItem = document.createElement('div');
-                skillItem.className = 'skill-item';
-                
-                const skillName = document.createElement('div');
-                skillName.className = 'skill-name';
-                skillName.innerHTML = `<span>${tag.textContent}</span><span>${90 - index * 10}%</span>`;
-                
-                const skillBar = document.createElement('div');
-                skillBar.className = 'skill-bar';
-                
-                const skillFill = document.createElement('div');
-                skillFill.className = 'skill-fill';
-                skillFill.setAttribute('data-width', 90 - index * 10);
-                
-                skillBar.appendChild(skillFill);
-                skillItem.appendChild(skillName);
-                skillItem.appendChild(skillBar);
-                skillProgress.appendChild(skillItem);
-            });
-            
-            category.appendChild(skillProgress);
-        });
-
-        // Animate skill bars on scroll
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const fills = entry.target.querySelectorAll('.skill-fill');
-                    fills.forEach(fill => {
-                        const width = fill.getAttribute('data-width');
-                        fill.style.width = width + '%';
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.skill-category').forEach(category => {
-            skillObserver.observe(category);
-        });
 
         // Enhanced particle interaction with mouse
         let mouseX = 0;
